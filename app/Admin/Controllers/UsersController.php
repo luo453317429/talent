@@ -77,7 +77,7 @@ class UsersController extends AdminController
 
         $form->text('name', '用户名')->rules('required|string|max:255');
         $form->email('email', '邮箱')->creationRules(['required','string','email','max:255','unique:users'])->updateRules(['required','string','email','max:255',"unique:users,email,{{id}}"]);
-        $form->datetime('email_verified_at', '邮箱验证时间')->default(date('Y-m-d H:i:s'));
+        $form->display('email_verified_at', '邮箱验证时间')->default(date('Y-m-d H:i:s'));
         $form->password('password', '密码')->rules('required|string|min:8|confirmed');
         $form->password('password_confirmation', '重复密码');
         $form->ignore('password_confirmation');
