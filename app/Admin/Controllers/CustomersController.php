@@ -188,6 +188,14 @@ class CustomersController extends AdminController
         $form->text('address', '地址');
         $form->textarea('remark', '备注');
 
+        $form->footer(function ($footer) {
+            $footer->disableReset();
+
+            $footer->disableViewCheck();
+
+            $footer->disableEditingCheck();
+        });
+
         return $form;
     }
 }
