@@ -10,6 +10,7 @@ use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
+use Encore\Admin\Facades\Admin;
 
 class CustomersController extends AdminController
 {
@@ -85,9 +86,11 @@ class CustomersController extends AdminController
             $filter->like('name', '姓名-中文');
         });
 
-        $grid->tools(function ($tools) {
-            $tools->append(new ImportPost());
-        });
+        if(Admin::user()->id == 1) {
+            $grid->tools(function ($tools) {
+                $tools->append(new ImportPost());
+            });
+        }
 
         $grid->exporter(new PostsExporter());
 
