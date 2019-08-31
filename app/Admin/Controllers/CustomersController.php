@@ -90,6 +90,10 @@ class CustomersController extends AdminController
             $grid->tools(function ($tools) {
                 $tools->append(new ImportPost());
             });
+        }else {
+            $grid->disableExport();
+            $grid->disableRowSelector();
+            $grid->disableColumnSelector();
         }
 
         $grid->exporter(new PostsExporter());
