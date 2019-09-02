@@ -11,7 +11,7 @@ Route::group([
 ], function (Router $router) {
 
 //    $router->get('/', 'HomeController@index')->name('admin.home');
-    $router->get('/', 'CustomersController@index');
+    $router->redirect('/', '/admin/customers');
     $router->get('users', 'UsersController@index');
     $router->get('users/create', 'UsersController@create');
     $router->post('users', 'UsersController@store');
