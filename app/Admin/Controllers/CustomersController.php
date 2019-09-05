@@ -10,7 +10,6 @@ use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
-use Encore\Admin\Facades\Admin;
 
 class CustomersController extends AdminController
 {
@@ -111,42 +110,42 @@ class CustomersController extends AdminController
     {
         $show = new Show(Customer::findOrFail($id));
 
-        $show->field('full_name', '企业名称-中文全称');
-        $show->field('simple_name', '企业名称-中文简称');
-        $show->field('full_name2', 'Company Full Name');
-        $show->field('simple_name2', 'Company Simple Name');
-        $show->field('own_industry', '所属行业');
-        $show->field('enterprise_grade', '企业等级');
-        $show->field('enterprise_type', '企业类型');
-        $show->field('enterprise_type2', '企业类型Ⅱ');
-        $show->field('subdividing_area', '细分领域');
-        $show->field('subdividing_area2', '细分领域Ⅱ');
-        $show->field('company_website', '公司官网');
-        $show->field('company_phone', '公司前台电话');
-        $show->field('company_introduction', '公司简介');
-        $show->field('special_marker', '特殊标记');
-        $show->field('contact_grade', '联系人等级');
-        $show->field('name', '姓名-中文');
-        $show->field('name2', '姓名-英文');
-        $show->field('nickname', '称谓');
-        $show->field('gender', '性别');
-        $show->field('department', '部门');
-        $show->field('department2', '部门-英文');
-        $show->field('position', '职位');
-        $show->field('position2', '职位-英文');
-        $show->field('email', '邮箱-工作');
-        $show->field('email2', '邮箱');
-        $show->field('cellphone', '手机');
-        $show->field('telephone', '固话');
-        $show->field('function_distribution', '职能分布');
-        $show->field('we_chat', '微信');
-        $show->field('qq', 'QQ');
-        $show->field('other_contact', '其它联系方式');
-        $show->field('resource', '来源');
-        $show->field('address', '地址');
-        $show->field('remark', '备注');
-        $show->field('created_at', '创建时间');
-        $show->field('updated_at', '更新时间');
+        $show->field('full_name', '企业名称-中文全称')->setWidth(5, 4);
+        $show->field('simple_name', '企业名称-中文简称')->setWidth(5, 4);
+        $show->field('full_name2', 'Company Full Name')->setWidth(5, 4);
+        $show->field('simple_name2', 'Company Simple Name')->setWidth(5, 4);
+        $show->field('own_industry', '所属行业')->setWidth(5, 4);
+        $show->field('enterprise_grade', '企业等级')->setWidth(5, 4);
+        $show->field('enterprise_type', '企业类型')->setWidth(5, 4);
+        $show->field('enterprise_type2', '企业类型Ⅱ')->setWidth(5, 4);
+        $show->field('subdividing_area', '细分领域')->setWidth(5, 4);
+        $show->field('subdividing_area2', '细分领域Ⅱ')->setWidth(5, 4);
+        $show->field('company_website', '公司官网')->setWidth(5, 4);
+        $show->field('company_phone', '公司前台电话')->setWidth(5, 4);
+        $show->field('company_introduction', '公司简介')->setWidth(5, 4);
+        $show->field('special_marker', '特殊标记')->setWidth(5, 4);
+        $show->field('contact_grade', '联系人等级')->setWidth(5, 4);
+        $show->field('name', '姓名-中文')->setWidth(5, 4);
+        $show->field('name2', '姓名-英文')->setWidth(5, 4);
+        $show->field('nickname', '称谓')->setWidth(5, 4);
+        $show->field('gender', '性别')->setWidth(5, 4);
+        $show->field('department', '部门')->setWidth(5, 4);
+        $show->field('department2', '部门-英文')->setWidth(5, 4);
+        $show->field('position', '职位')->setWidth(5, 4);
+        $show->field('position2', '职位-英文')->setWidth(5, 4);
+        $show->field('email', '邮箱-工作')->setWidth(5, 4);
+        $show->field('email2', '邮箱')->setWidth(5, 4);
+        $show->field('cellphone', '手机')->setWidth(5, 4);
+        $show->field('telephone', '固话')->setWidth(5, 4);
+        $show->field('function_distribution', '职能分布')->setWidth(5, 4);
+        $show->field('we_chat', '微信')->setWidth(5, 4);
+        $show->field('qq', 'QQ')->setWidth(5, 4);
+        $show->field('other_contact', '其它联系方式')->setWidth(5, 4);
+        $show->field('resource', '来源')->setWidth(5, 4);
+        $show->field('address', '地址')->setWidth(5, 4);
+        $show->field('remark', '备注')->setWidth(5, 4);
+        $show->field('created_at', '创建时间')->setWidth(5, 4);
+        $show->field('updated_at', '更新时间')->setWidth(5, 4);
 
         return $show;
     }
@@ -202,6 +201,8 @@ class CustomersController extends AdminController
 
             $footer->disableEditingCheck();
         });
+
+        $form->setWidth(5,4);
 
         return $form;
     }
