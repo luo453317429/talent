@@ -21,7 +21,6 @@ Route::group([
     $router->get('customers', 'CustomersController@index');
     $router->get('customers/create', 'CustomersController@create');
     $router->post('customers', 'CustomersController@store');
-    $router->get('customers', 'CustomersController@index');
     $router->get('customers/{id}', 'CustomersController@show');
     $router->get('customers/{id}/edit', 'CustomersController@edit');
     $router->put('customers/{id}', 'CustomersController@update');
@@ -29,7 +28,6 @@ Route::group([
     $router->get('option_configs', 'OptionConfigsController@index');
     $router->get('option_configs/create', 'OptionConfigsController@create');
     $router->post('option_configs', 'OptionConfigsController@store');
-    $router->get('option_configs', 'OptionConfigsController@index');
     $router->get('option_configs/{id}', 'OptionConfigsController@show');
     $router->get('option_configs/{id}/edit', 'OptionConfigsController@edit');
     $router->put('option_configs/{id}', 'OptionConfigsController@update');
