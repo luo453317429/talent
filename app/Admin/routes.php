@@ -25,6 +25,7 @@ Route::group([
     $router->get('customers/{id}', 'CustomersController@show');
     $router->get('customers/{id}/edit', 'CustomersController@edit');
     $router->put('customers/{id}', 'CustomersController@update');
+    $router->delete('customers/{id}', 'CustomersController@destroy');
     $router->get('option_configs', 'OptionConfigsController@index');
     $router->get('option_configs/create', 'OptionConfigsController@create');
     $router->post('option_configs', 'OptionConfigsController@store');
